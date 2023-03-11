@@ -25,7 +25,21 @@ app.listen(port, () => {
 
 bot.onText(/导航/,msg => {
   const {id} = msg.chat
-  bot.sendMessage(id,'hello world')
+  bot.sendMessage(id,{
+    reply_markup:{
+      inline_keyboard:[
+        [
+          {text:'button1',callback_data:'button1'},
+          {text:'button2',callback_data:'button2'},
+          {text:'button3',callback_data:'button3'},
+          {text:'button4',callback_data:'button4'},
+        ],
+        [
+          {text:'机器人口令一览',callback_data:'button5'},
+        ]
+      ]
+    }
+  })
 })
 
 bot.on('message', msg => {
@@ -35,3 +49,5 @@ bot.on('message', msg => {
 bot.on('webhook_error', (error) => {
   console.log(error.code);  // => 'EPARSE'
 });
+
+bot.
