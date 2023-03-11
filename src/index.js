@@ -31,3 +31,7 @@ bot.onText(/导航/,msg => {
 bot.on('message', msg => {
   bot.sendMessage(msg.chat.id, 'I am alive!');
 });
+
+bot.on('webhook_error', (error) => {
+  console.log(error.code);  // => 'EPARSE'
+});
