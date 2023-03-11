@@ -1,5 +1,6 @@
 const express = require('express');
 const TelegramBot = require('node-telegram-bot-api');
+const port = process.env.PORT;
 const TELEGRAM_BOT_TOKEN = '5843596200:AAFfeDlX2b2Oko9iJjjQ5fF8S6yMZO_ct0s'
 const URL = 'telegram-bot-telegram-bot-55d2.up.railway.app'
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN);
