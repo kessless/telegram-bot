@@ -31,8 +31,10 @@ bot.onText(/\/start$/, msg => {
         [
           { text: 'button1', switch_inline_query: 'button1' },
           { text: 'button2', switch_inline_query_current_chat: 'button2' },
-          { text: 'button3', callback_data: 'button3' },
-          { text: 'button4', callback_data: 'button4' },
+          { text: 'button3', web_app: 'button3' },
+          { text: 'button4', text: 'button4' },
+          { text: 'button4', url: 'button4' },
+          { text: 'button4', callback_game: 'button4' },
         ],
         [
           { text: '机器人口令一览', callback_data: 'button5' },
