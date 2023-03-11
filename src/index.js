@@ -23,9 +23,9 @@ app.listen(port, () => {
   console.log(`Express server is listening on ${port}`);
 });
 
-bot.onText(/导航$/, msg => {
+bot.onText(/\/start$/, msg => {
   const { id } = msg.chat
-  bot.sendMessage(id, {
+  bot.sendMessage(id,'hello', {
     reply_markup: {
       inline_keyboard: [
         [
@@ -43,6 +43,7 @@ bot.onText(/导航$/, msg => {
 })
 
 bot.on('message', msg => {
+  console.log()
   bot.sendMessage(msg.chat.id, 'I am alive!');
 });
 
