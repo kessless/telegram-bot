@@ -23,7 +23,7 @@ app.listen(port, () => {
   console.log(`Express server is listening on ${port}`);
 });
 
-bot.onText(/导航/, msg => {
+bot.onText(/导航$/, msg => {
   const { id } = msg.chat
   bot.sendMessage(id, {
     reply_markup: {
