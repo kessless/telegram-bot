@@ -29,8 +29,7 @@ bot.onText(/\/start$/, msg => {
     reply_markup: {
       inline_keyboard: [
         [
-          { text: 'button4', url: 'button4' },
-          { text: 'button4', callback_game: 'button4' },
+          { text: 'button4', switch_inline_query: 'button4' },
         ],
         [
           { text: '机器人口令一览', callback_data: 'button5' },
@@ -49,7 +48,8 @@ bot.on('webhook_error', (error) => {
   console.log(error.code);  // => 'EPARSE'
 });
 
-bot.on('callback_query', query => {
+bot.on('inline_query', query => {
   const { queryId, data, message: { chat: { id } } } = query
-  bot.answerCallbackQuery(queryId)
+  bot.answerInlineQuery(queryId,'hello',{switch_pm_text:'nnnnn'})
 })
+
