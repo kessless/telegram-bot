@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/kessless/telegram-bot#readme",
   "dependencies": {
-    "telebot": "^1.4.1"
+    "node-telegram-bot-api": "^0.61.0"
   }
 }
