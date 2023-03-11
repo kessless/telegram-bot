@@ -29,8 +29,8 @@ bot.onText(/\/start$/, msg => {
     reply_markup: {
       inline_keyboard: [
         [
-          { text: 'button1', callback_data: 'button1' },
-          { text: 'button2', callback_data: 'button2' },
+          { text: 'button1', switch_inline_query: 'button1' },
+          { text: 'button2', switch_inline_query_current_chat: 'button2' },
           { text: 'button3', callback_data: 'button3' },
           { text: 'button4', callback_data: 'button4' },
         ],
