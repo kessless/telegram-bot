@@ -23,19 +23,19 @@ app.listen(port, () => {
   console.log(`Express server is listening on ${port}`);
 });
 
-bot.onText(/导航/,msg => {
-  const {id} = msg.chat
-  bot.sendMessage(id,{
-    reply_markup:{
-      inline_keyboard:[
+bot.onText(/导航/, msg => {
+  const { id } = msg.chat
+  bot.sendMessage(id, {
+    reply_markup: {
+      inline_keyboard: [
         [
-          {text:'button1',callback_data:'button1'},
-          {text:'button2',callback_data:'button2'},
-          {text:'button3',callback_data:'button3'},
-          {text:'button4',callback_data:'button4'},
+          { text: 'button1', callback_data: 'button1' },
+          { text: 'button2', callback_data: 'button2' },
+          { text: 'button3', callback_data: 'button3' },
+          { text: 'button4', callback_data: 'button4' },
         ],
         [
-          {text:'机器人口令一览',callback_data:'button5'},
+          { text: '机器人口令一览', callback_data: 'button5' },
         ]
       ]
     }
@@ -50,4 +50,7 @@ bot.on('webhook_error', (error) => {
   console.log(error.code);  // => 'EPARSE'
 });
 
-bot.
+bot.on('callback_query', query => {
+  const { queryId, data, message: { chat: { id } } } = query
+  bot.answerCallbackQuery(queryId)
+})
