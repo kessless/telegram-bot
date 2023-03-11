@@ -29,7 +29,6 @@ bot.onText(/\/start$/, msg => {
     reply_markup: {
       inline_keyboard: [
         [
-          { text: 'button4', text: 'button4' },
           { text: 'button4', url: 'button4' },
           { text: 'button4', callback_game: 'button4' },
         ],
