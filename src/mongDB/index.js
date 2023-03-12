@@ -7,6 +7,7 @@ const url = process.env.MONGO_URL;
 // 定义要操作的数据库
 
 const oprateDBWraper = (dbName) => {
+  console.log('xh------oprateDBWraper')
   MongoClient.connect(url, { useUnifiedTopology: true }, (err, client) => {
     if (err) {
       console.log(err);
