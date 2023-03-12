@@ -25,7 +25,7 @@ app.listen(port, () => {
 });
 
 
-bot.onText(/导航$/, msg => {
+bot.onText(/^导航$/, msg => {
   const { id } = msg.chat
   bot.sendMessage(id, 'hello', {
     reply_markup: {
@@ -59,8 +59,11 @@ bot.on('message', msg => {
   switch (text) {
     case '/查看id':
       if (!reply_to_message) return
-      oprateDBWraper('test')
       bot.sendMessage(chat_id, `${reply_to_message.message_id}`)
+      break;
+    case 'db':
+      oprateDBWraper('test')
+      bot.sendMessage(chat_id, '执行力db')
       break;
 
     default:
