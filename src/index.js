@@ -44,7 +44,7 @@ bot.on('message', msg => {
   const { chat: { id:chat_id }, reply_to_message, text } = msg
   switch (text) {
     case '/查看id':
-      bot.sendMessage(chat_id, reply_to_message)
+      bot.sendMessage(chat_id, `${reply_to_message.message_id}`)
       break;
 
     default:
