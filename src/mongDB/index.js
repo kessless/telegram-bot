@@ -8,20 +8,26 @@ const url = process.env.MONGO_URL;
 
 const cilent = new MongoClient(url)
 
-const oprateDBWraper = (dbName) => {
-  console.log('xh------url',url)
-  cilent.connect((err, client) => {
-    if (err) {
-      console.log('报错了',err);
-      return;
-    }
-    console.log("连接成功");
-    // 获取 db 对象 
-    const db = client.db(dbName);
-    console.log('xh---db', db)
-    // 操作完数据库后，一定要记得关闭
-    client.close();
-  })
+async function listDatabases(client) {
+  databasesList = await client.db().admin().listDatabases();
+
+  console.log("Databases:");
+  databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+};
+
+const oprateDBWraper = async (dbName) => {
+  console.log('xh------url', url)
+  try {
+    const database = client.db(dbName);
+    const buttons = database.collection('menuButtons');
+    console.log('xh-----buttons',buttons)
+  } catch (error) {
+    console.log(error)
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+
 }
 
 
