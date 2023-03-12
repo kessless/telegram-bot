@@ -41,11 +41,18 @@ bot.onText(/\/导航$/, msg => {
 })
 
 bot.on('message', msg => {
+  const { message_id, chat: { chat_id }, reply_to_message: { message_id: replyMessage_id }, text } = msg
+  switch (text) {
+    case '/查看id':
+      bot.sendMessage(chat_id, replyMessage_id)
+      break;
+
+    default:
+      break;
+  }
   console.log('xh----msg', msg)
 });
 
 bot.on('webhook_error', (error) => {
   console.log(error.code);  // => 'EPARSE'
 });
-
-
