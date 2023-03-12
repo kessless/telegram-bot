@@ -1,4 +1,4 @@
-const oprateDBWraper = require('./mongDB/index')
+const { oprateDBWraper } = require('./mongDB/index')
 const express = require('express');
 const TelegramBot = require('node-telegram-bot-api');
 const port = process.env.PORT;

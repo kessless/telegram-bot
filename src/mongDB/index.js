@@ -22,4 +22,4 @@ const oprateDBWraper = (dbName) => {
 }
 
 
-export default oprateDBWraper
+exports.oprateDBWraper = oprateDBWraper
