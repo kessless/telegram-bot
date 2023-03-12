@@ -31,36 +31,20 @@ bot.onText(/导航$/, msg => {
     reply_markup: {
       inline_keyboard: [
         [
-          [
-            { text: '已验资源', url: 't.me/kessless_bot/121' },
-          ],
-          [
-            { text: '车评上传', url: 't.me/shiyan456/4' },
-          ]
+          { text: '已验资源', url: 't.me/kessless_bot/121' },
+          { text: '车评上传', url: 't.me/shiyan456/4' },
         ],
         [
-          [
-            { text: '高端外围', url: 't.me/kessless_bot/121' },
-          ],
-          [
-            { text: '电影频道', url: 't.me/shiyan456/4' },
-          ]
+          { text: '高端外围', url: 't.me/kessless_bot/121' },
+          { text: '电影频道', url: 't.me/shiyan456/4' },
         ],
         [
-          [
-            { text: '精准楼凤', url: 't.me/kessless_bot/121' },
-          ],
-          [
-            { text: '误封申诉群', url: 't.me/shiyan456/4' },
-          ]
+          { text: '精准楼凤', url: 't.me/kessless_bot/121' },
+          { text: '误封申诉群', url: 't.me/shiyan456/4' },
         ],
         [
-          [
-            { text: 'TG安装教程', url: 't.me/kessless_bot/121' },
-          ],
-          [
-            { text: '全国导航', url: 't.me/shiyan456/4' },
-          ]
+          { text: 'TG安装教程', url: 't.me/kessless_bot/121' },
+          { text: '全国导航', url: 't.me/shiyan456/4' },
         ],
         [
           { text: '设置中文', url: 't.me/setlanguage/classic-zh-cn' }
