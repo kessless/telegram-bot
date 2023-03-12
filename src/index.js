@@ -25,7 +25,7 @@ app.listen(port, () => {
 });
 
 
-bot.onText(/\/导航$/, msg => {
+bot.onText(/导航$/, msg => {
   const { id } = msg.chat
   bot.sendMessage(id, 'hello', {
     reply_markup: {
