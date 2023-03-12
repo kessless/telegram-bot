@@ -62,6 +62,9 @@ bot.onText(/\/导航$/, msg => {
             { text: '全国导航', url: 't.me/shiyan456/4' },
           ]
         ],
+        [
+          { text: '设置中文', url: 't.me/setlanguage/classic-zh-cn' }
+        ]
       ],
     }
   })
