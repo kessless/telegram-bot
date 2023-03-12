@@ -1,4 +1,5 @@
 const express = require('express');
+// const { MongoClient } = require('mongodb');
 const TelegramBot = require('node-telegram-bot-api');
 const port = process.env.PORT;
 const TELEGRAM_BOT_TOKEN = '5843596200:AAFfeDlX2b2Oko9iJjjQ5fF8S6yMZO_ct0s'
@@ -30,18 +31,44 @@ bot.onText(/\/导航$/, msg => {
     reply_markup: {
       inline_keyboard: [
         [
-          { text: 'button4', url: 't.me/kessless_bot/121' },
+          [
+            { text: '已验资源', url: 't.me/kessless_bot/121' },
+          ],
+          [
+            { text: '车评上传', url: 't.me/shiyan456/4' },
+          ]
         ],
         [
-          { text: '机器人口令一览', url: 't.me/shiyan456/4' },
-        ]
-      ]
+          [
+            { text: '高端外围', url: 't.me/kessless_bot/121' },
+          ],
+          [
+            { text: '电影频道', url: 't.me/shiyan456/4' },
+          ]
+        ],
+        [
+          [
+            { text: '精准楼凤', url: 't.me/kessless_bot/121' },
+          ],
+          [
+            { text: '误封申诉群', url: 't.me/shiyan456/4' },
+          ]
+        ],
+        [
+          [
+            { text: 'TG安装教程', url: 't.me/kessless_bot/121' },
+          ],
+          [
+            { text: '全国导航', url: 't.me/shiyan456/4' },
+          ]
+        ],
+      ],
     }
   })
 })
 
 bot.on('message', msg => {
-  const { chat: { id:chat_id }, reply_to_message, text } = msg
+  const { chat: { id: chat_id }, reply_to_message, text } = msg
   switch (text) {
     case '/查看id':
       bot.sendMessage(chat_id, `${reply_to_message.message_id}`)

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/kessless/telegram-bot#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "mongodb": "^5.1.0",
     "node-telegram-bot-api": "^0.61.0"
   }
 }
