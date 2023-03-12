@@ -63,7 +63,6 @@ bot.on('message', msg => {
       break;
     case 'db':
       oprateDBWraper('test')
-      console.log(oprateDBWraper)
       bot.sendMessage(chat_id, '执行力db')
       break;
 

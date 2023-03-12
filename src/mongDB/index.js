@@ -9,7 +9,6 @@ const url = process.env.MONGO_URL;
 const client = new MongoClient(url)
 
 const oprateDBWraper = async (dbName) => {
-  console.log('xh------url', url)
   try {
     const database = client.db(dbName);
     const buttons = database.collection('menuButtons').find();
