@@ -1,5 +1,5 @@
+import oprateDBWraper from './mongDB/index'
 const express = require('express');
-// const { MongoClient } = require('mongodb');
 const TelegramBot = require('node-telegram-bot-api');
 const port = process.env.PORT;
 const TELEGRAM_BOT_TOKEN = '5843596200:AAFfeDlX2b2Oko9iJjjQ5fF8S6yMZO_ct0s'
@@ -58,6 +58,7 @@ bot.on('message', msg => {
   const { chat: { id: chat_id }, reply_to_message, text } = msg
   switch (text) {
     case '/查看id':
+      oprateDBWraper('test')
       bot.sendMessage(chat_id, `${reply_to_message.message_id}`)
       break;
 
@@ -66,6 +67,8 @@ bot.on('message', msg => {
   }
   console.log('xh----msg', msg)
 });
+
+bot.setMyCommands()
 
 bot.on('webhook_error', (error) => {
   console.log(error.code);  // => 'EPARSE'
