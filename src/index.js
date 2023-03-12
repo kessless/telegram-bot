@@ -30,7 +30,7 @@ bot.onText(/\/导航$/, msg => {
     reply_markup: {
       inline_keyboard: [
         [
-          { text: 'button4', url: 'https://www.baidu.com' },
+          { text: 'button4', url: 't.me/@kessless_bot/118' },
         ],
         [
           { text: '机器人口令一览', callback_data: 'button5' },
