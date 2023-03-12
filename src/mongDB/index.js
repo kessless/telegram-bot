@@ -6,7 +6,7 @@ const url = process.env.MONGO_URL;
 
 // 定义要操作的数据库
 
-const cilent = new MongoClient(url)
+const client = new MongoClient(url)
 
 async function listDatabases(client) {
   databasesList = await client.db().admin().listDatabases();
