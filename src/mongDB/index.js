@@ -10,7 +10,7 @@ const oprateDBWraper = (dbName) => {
   console.log('xh------url',url)
   MongoClient.connect(url, (err, client) => {
     if (err) {
-      console.log(err);
+      console.log('报错了',err);
       return;
     }
     console.log("连接成功");
