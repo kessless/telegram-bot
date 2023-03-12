@@ -23,13 +23,14 @@ app.listen(port, () => {
   console.log(`Express server is listening on ${port}`);
 });
 
-bot.onText(/\/start$/, msg => {
+
+bot.onText(/\/导航$/, msg => {
   const { id } = msg.chat
-  bot.sendMessage(id,'hello', {
+  bot.sendMessage(id, 'hello', {
     reply_markup: {
       inline_keyboard: [
         [
-          { text: 'button4', switch_inline_query: 'button4' },
+          { text: 'button4', url: 'https://www.baidu.com' },
         ],
         [
           { text: '机器人口令一览', callback_data: 'button5' },
@@ -40,16 +41,11 @@ bot.onText(/\/start$/, msg => {
 })
 
 bot.on('message', msg => {
-  console.log()
-  bot.sendMessage(msg.chat.id, 'I am alive!');
+  console.log('xh----msg', msg)
 });
 
 bot.on('webhook_error', (error) => {
   console.log(error.code);  // => 'EPARSE'
 });
 
-bot.on('inline_query', query => {
-  const { queryId, data, message: { chat: { id } } } = query
-  bot.answerInlineQuery(queryId,'hello',{switch_pm_text:'nnnnn'})
-})
 
