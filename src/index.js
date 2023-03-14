@@ -25,15 +25,15 @@ app.listen(port, () => {
 });
 
 
-// bot.onText(/^导航$/, async msg => {
-//   const { id } = msg.chat
-//   const buttonsConfig = await oprateDBWraper('test')
-//   bot.sendMessage(id, '菜单', {
-//     reply_markup: {
-//       inline_keyboard: buttonsConfig
-//     }
-//   })
-// })
+bot.onText(/^导航$/, async msg => {
+  const { id } = msg.chat
+  const buttonsConfig = await oprateDBWraper('test')
+  bot.sendMessage(id, '菜单', {
+    reply_markup: {
+      inline_keyboard: buttonsConfig
+    }
+  })
+})
 
 // bot.onText(/^设置导航$/, (msg, chat) => {
 //   const { from: { id: userId } } = msg
@@ -48,11 +48,11 @@ app.listen(port, () => {
 //   }
 // });
 
-bot.on('message',msg=>{
-  const { id } = msg.chat
-  console.log('xh------msg',msg)
-  bot.sendMessage(id, '菜单')
-})
+// bot.on('message',msg=>{
+//   const { id } = msg.chat
+//   console.log('xh------msg',msg)
+//   bot.sendMessage(id, '菜单')
+// })
 
 
 bot.on('webhook_error', (error) => {
