@@ -28,7 +28,7 @@ app.listen(port, () => {
 bot.onText(/^导航$/, async msg => {
   const { id } = msg.chat
   const {menuButtons} = await oprateDBWraper('test')
-  bot.sendMessage(id, '菜单', {
+  bot.sendMessage(id, `${menuButtons}`, {
     reply_markup: {
       inline_keyboard: menuButtons
     }
