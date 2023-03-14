@@ -50,7 +50,7 @@ bot.onText(/^设置导航$/, (msg, chat) => {
   }
 });
 
-bot.on('switch_inline_query', (...args) => {
+bot.on('inline_query', (...args) => {
   console.log('xh------msg', args)
 })
 
