@@ -33,7 +33,7 @@ bot.onText(/^导航$/, async msg => {
   //     inline_keyboard: buttons
   //   }
   // })
-  console.log{'xh---------buttons',buttons}
+  console.log('xh---------buttons',buttons)
   bot.sendMessage(id, `${buttons}`)
 })
 
