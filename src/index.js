@@ -25,36 +25,34 @@ app.listen(port, () => {
 });
 
 
-bot.onText(/^导航$/, async msg => {
-  const { id } = msg.chat
-  const buttons = await oprateDBWraper('test')
-  // bot.sendMessage(id, `${buttons}`, {
-  //   reply_markup: {
-  //     inline_keyboard: buttons
-  //   }
-  // })
-  console.log('xh---------buttons',buttons[0])
-  bot.sendMessage(id, `${buttons}`)
-})
-
-// bot.onText(/^设置导航$/, (msg, chat) => {
-//   const { from: { id: userId } } = msg
-//   console.log('xh---msg', msg)
-//   const { type, id } = chat
-//   if (type === 'private') {
-//     bot.sendMessage(id, '设置导航', {
-//       reply_markup: {
-//         inline_keyboard: [{ text: '选择一个你所管理的群组', switch_inline_query: '设置导航' }]
-//       }
-//     })
-//   }
-// });
-
-// bot.on('message',msg=>{
+// bot.onText(/^导航$/, async (msg,chat) => {
 //   const { id } = msg.chat
-//   console.log('xh------msg',msg)
-//   bot.sendMessage(id, '菜单')
+//   const buttons = await oprateDBWraper('test')
+//   // bot.sendMessage(id, `${buttons}`, {
+//   //   reply_markup: {
+//   //     inline_keyboard: buttons
+//   //   }
+//   // })
+//   console.log('xh---------buttons',buttons[0])
+//   bot.sendMessage(id, `${buttons}`)
 // })
+
+bot.onText(/^设置导航$/, (msg, chat) => {
+  const { from: { id: userId } } = msg
+  console.log('xh---msg', msg)
+  const { type, id } = chat
+  if (type === 'private') {
+    bot.sendMessage(id, '设置导航', {
+      reply_markup: {
+        inline_keyboard: [{ text: '选择一个你所管理的群组', switch_inline_query: '设置导航' }]
+      }
+    })
+  }
+});
+
+bot.on('switch_inline_query', (...args) => {
+  console.log('xh------msg', args)
+})
 
 
 bot.on('webhook_error', (error) => {
