@@ -35,17 +35,8 @@ bot.onText(/^导航$/, async msg => {
   })
 })
 
-bot.on('message', msg => {
-  const { chat: { id: chat_id }, reply_to_message, text } = msg
-  switch (text) {
-    case '/查看id':
-      if (!reply_to_message) return
-      bot.sendMessage(chat_id, `${reply_to_message.message_id}`)
-      break;
-    default:
-      break;
-  }
-  console.log('xh----msg', msg)
+bot.on('message', (...args) => {
+  console.log('xh------obj', args)
 });
 
 bot.setMyCommands()
