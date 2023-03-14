@@ -44,7 +44,7 @@ bot.onText(/^设置导航$/, ({from, chat}) => {
     console.log('xh---type',type)
     bot.sendMessage(id, '设置导航', {
       reply_markup: {
-        inline_keyboard: [[{ text: '选择一个你所管理的群组', url: 't.me/kessless_bot&startgroup='}]]
+        inline_keyboard: [[{ text: '选择一个你所管理的群组', url: 't.me/kessless_bot&startgroup=test'}]]
       }
     })
   }
