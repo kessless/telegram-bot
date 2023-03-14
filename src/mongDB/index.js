@@ -12,7 +12,7 @@ const oprateDBWraper = async (dbName) => {
   try {
     const database = await client.db(dbName);
     const buttons = await database.collection('menuButtons').find();
-    return JSON.parse(buttons)
+    return buttons
   } catch (error) {
     console.log(error)
   } finally {
