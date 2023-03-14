@@ -28,11 +28,13 @@ app.listen(port, () => {
 bot.onText(/^导航$/, async msg => {
   const { id } = msg.chat
   const buttons = await oprateDBWraper('test')
-  bot.sendMessage(id, `${buttons}`, {
-    reply_markup: {
-      inline_keyboard: buttons
-    }
-  })
+  // bot.sendMessage(id, `${buttons}`, {
+  //   reply_markup: {
+  //     inline_keyboard: buttons
+  //   }
+  // })
+  console.log{'xh---------buttons',buttons}
+  bot.sendMessage(id, `${buttons}`)
 })
 
 // bot.onText(/^设置导航$/, (msg, chat) => {
