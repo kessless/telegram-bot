@@ -44,7 +44,7 @@ bot.onText(/^设置导航$/, ({from, chat}) => {
     console.log('xh---type',type)
     bot.sendMessage(id, '设置导航', {
       reply_markup: {
-        inline_keyboard: [{ text: '选择一个你所管理的群组', switch_inline_query: '设置导航' }]
+        inline_keyboard: [[{ text: '选择一个你所管理的群组', switch_inline_query: '设置导航' }]]
       }
     })
   }
