@@ -37,18 +37,17 @@ app.listen(port, () => {
 //   bot.sendMessage(id, `${buttons}`)
 // })
 
-bot.onText(/^设置导航$/, (msg, chat) => {
-  const { from: { id: userId } } = msg
-  console.log('xh---msg', msg)
+bot.onText(/^设置导航$/, ({from, chat}) => {
+  const { id: userId  } = from
   const { type, id } = chat
-  // if (type === 'private') {
+  if (type === 'private') {
     console.log('xh---type',type)
     bot.sendMessage(id, '设置导航', {
       reply_markup: {
         inline_keyboard: [{ text: '选择一个你所管理的群组', switch_inline_query: '设置导航' }]
       }
     })
-  // }
+  }
 });
 
 bot.on('inline_query', (...args) => {
