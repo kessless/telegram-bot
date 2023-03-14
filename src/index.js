@@ -37,7 +37,8 @@ bot.onText(/^导航$/, async msg => {
 
 bot.onText(/^设置导航$/, (msg, chat) => {
   const { from: { id: userId } } = msg
-  const { type } = chat
+  console.log('xh---msg', msg)
+  const { type, id } = chat
   if (type === 'private') {
     bot.sendMessage(id, '设置导航', {
       reply_markup: {
@@ -45,8 +46,8 @@ bot.onText(/^设置导航$/, (msg, chat) => {
       }
     })
   }
-
 });
+
 
 
 bot.on('webhook_error', (error) => {
