@@ -10,16 +10,16 @@ const client = new MongoClient(url)
 
 const oprateDBWraper = async (dbName) => {
   try {
-    const database =  await client.db(dbName);
+    const database = await client.db(dbName);
     const buttons = await database.collection('menuButtons').find();
-    console.log('xh-----buttons',buttons)
+    console.log('xh-----buttons', buttons)
+    return buttons
   } catch (error) {
     console.log(error)
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
   }
-  return buttons
 }
 
 
