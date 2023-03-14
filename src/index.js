@@ -62,8 +62,9 @@ bot.on('message', msg => {
       bot.sendMessage(chat_id, `${reply_to_message.message_id}`)
       break;
     case 'db':
-      oprateDBWraper('test')
-      bot.sendMessage(chat_id, '执行力db')
+      oprateDBWraper('test').then(res=>{
+        bot.sendMessage(chat_id, `执行力db------${res}`)
+      })
       break;
 
     default:
