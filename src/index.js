@@ -48,10 +48,6 @@ bot.onText(/^设置导航$/, (msg, chat) => {
 
 });
 
-bot.on('switch_inline_query', (...args) => {
-  console.log('xh----args', args)
-})
-
 
 bot.on('webhook_error', (error) => {
   console.log(error.code);  // => 'EPARSE'
