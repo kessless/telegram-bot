@@ -25,30 +25,30 @@ app.listen(port, () => {
 });
 
 
-// bot.onText(/^导航$/, async msg => {
-//   const { id } = msg.chat
-//   const buttonsConfig = await oprateDBWraper('test')
-//   bot.sendMessage(id, '菜单', {
-//     reply_markup: {
-//       inline_keyboard: buttonsConfig
-//     }
-//   })
-// })
+bot.onText(/^导航$/, async msg => {
+  const { id } = msg.chat
+  const buttonsConfig = await oprateDBWraper('test')
+  bot.sendMessage(id, '菜单', {
+    reply_markup: {
+      inline_keyboard: buttonsConfig
+    }
+  })
+})
 
-// bot.onText(/^设置导航$/, (msg, chat) => {
-//   const { from: { id: userId } } = msg
-//   const { type } = chat
-//   if (type === 'private') {
-//     bot.sendMessage(id, '设置导航', {
-//       reply_markup: {
-//         inline_keyboard: [{ text: '选择一个你所管理的群组', switch_inline_query: '设置导航' }]
-//       }
-//     })
-//   }
+bot.onText(/^设置导航$/, (msg, chat) => {
+  const { from: { id: userId } } = msg
+  const { type } = chat
+  if (type === 'private') {
+    bot.sendMessage(id, '设置导航', {
+      reply_markup: {
+        inline_keyboard: [{ text: '选择一个你所管理的群组', switch_inline_query: '设置导航' }]
+      }
+    })
+  }
 
-// });
+});
 
 
-// bot.on('webhook_error', (error) => {
-//   console.log(error.code);  // => 'EPARSE'
-// });
+bot.on('webhook_error', (error) => {
+  console.log(error.code);  // => 'EPARSE'
+});
