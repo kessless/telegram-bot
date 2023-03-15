@@ -37,18 +37,20 @@ app.listen(port, () => {
 //   bot.sendMessage(id, `${buttons}`)
 // })
 
-bot.onText(/^设置导航$/, ({from, chat}) => {
-  const { id: userId  } = from
+bot.onText(/^设置导航$/, ({ from, chat }) => {
+  const { id: userId } = from
   const { type, id } = chat
   if (type === 'private') {
-    console.log('xh---type',type)
+    console.log('xh---type', type)
     bot.sendMessage(id, '设置导航', {
       reply_markup: {
-        inline_keyboard: [[{ text: '选择一个你所管理的群组', url: 't.me/kessless_bot&startgroup=test'}]]
+        inline_keyboard: [[{ text: '选择一个你所管理的群组', url: 't.me/kessless_bot?startgroup=test' }]]
       }
     })
   }
 });
+
+bot.setMyCommands([{ command: '/start', description: 'test start' }])
 
 bot.on('inline_query', (...args) => {
   console.log('xh------msg', args)
