@@ -44,13 +44,13 @@ bot.onText(/^设置导航$/, ({ from, chat }) => {
     console.log('xh---type', type)
     bot.sendMessage(id, '设置导航', {
       reply_markup: {
-        inline_keyboard: [[{ text: '选择一个你所管理的群组', url: 't.me/kessless_bot?startgroup=test' }]]
+        inline_keyboard: [[{ text: '选择一个你所管理的群组', url: 't.me/kessless_bot?startgroup=false' }]]
       }
     })
   }
 });
 
-bot.setMyCommands([{ command: '/start', description: 'test start' }])
+bot.setMyCommands([{ command: '/start', description: '设置机器人' }])
 
 bot.on('inline_query', (...args) => {
   console.log('xh------msg', args)
