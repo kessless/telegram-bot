@@ -45,12 +45,19 @@ bot.onText(/^设置导航$/, ({ from, chat }) => {
   if (type === 'private') {
     bot.sendMessage(id, '设置导航', {
       reply_markup: {
-        inline_keyboard: [[{ text: '选择一个你所管理的群组', url: `t.me/${botName}?startgroup=false` }]]
+        inline_keyboard: [
+          [
+            { text: '选择一个你所管理的群组', url: `t.me/${botName}?startgroup=false` }
+          ],
+          [
+            { text: '设置欢迎语', url: `t.me/${botName}?startgroup=false` }
+          ]
+        ]
       }
     })
   }
 });
-bot.onText(/^\/start[\s\S]*¥/, ({ message_id, from, chat }) => {
+bot.onText(/^\/start.*$/, ({ message_id, from, chat }) => {
   const { id } = chat
   bot.deleteMessage(id, message_id)
 });
