@@ -55,6 +55,11 @@ bot.onText(/^\/start[\s\S]*¥/, ({ message_id, from, chat }) => {
   bot.deleteMessage(id, message_id)
 });
 
+bot.on('new_chat_members', ({ from, chat }) => {
+  const { id } = chat
+  bot.sendMessage(id, '欢迎新人进入！')
+})
+
 
 
 bot.setMyCommands([{ command: '/start', description: '设置机器人' }])
