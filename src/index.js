@@ -50,7 +50,7 @@ bot.onText(/^设置导航$/, ({ from, chat }) => {
     })
   }
 });
-bot.onText(/^\/start/, ({ message_id, from, chat }) => {
+bot.onText(/^\/start[\s\S]*¥/, ({ message_id, from, chat }) => {
   const { id } = chat
   bot.deleteMessage(id, message_id)
 });
