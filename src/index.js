@@ -51,10 +51,8 @@ bot.onText(/^设置导航$/, ({ from, chat }) => {
   }
 });
 bot.onText(/^\/start/, ({ message_id, from, chat }) => {
-  const { type, id } = chat
-  if (type !== 'private') {
-    bot.deleteMessage(id, message_id)
-  }
+  const { id } = chat
+  bot.deleteMessage(id, message_id)
 });
 
 
