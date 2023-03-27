@@ -39,7 +39,7 @@ app.listen(port, () => {
 //   bot.sendMessage(id, `${buttons}`)
 // })
 
-bot.onText(/^设置导航$/, ({ from, chat }) => {
+bot.onText(/^导航$/, ({ from, chat }) => {
   const { id: userId } = from
   const { type, id } = chat
   if (type === 'private') {
@@ -47,11 +47,30 @@ bot.onText(/^设置导航$/, ({ from, chat }) => {
       reply_markup: {
         inline_keyboard: [
           [
-            { text: '选择一个你所管理的群组', url: `t.me/${botName}?startgroup=false` }
+            { text: '榜单报告', url: `t.me/${botName}?startgroup=false` },
+            { text: '车评上传', url: `t.me/${botName}?startgroup=false` }
           ],
           [
-            { text: '设置欢迎语', url: `t.me/${botName}?startgroup=false` }
+            { text: '私人定制', url: `t.me/${botName}?startgroup=false` },
+            { text: '电影频道', url: `t.me/${botName}?startgroup=false` }
+          ],
+          [
+            { text: '精准楼凤', url: `t.me/${botName}?startgroup=false` },
+            { text: '误封申诉群', url: `t.me/${botName}?startgroup=false` }
+          ],
+          [
+            { text: 'TG安装教程', url: `t.me/${botName}?startgroup=false` },
+            { text: '全国导航', url: `t.me/${botName}?startgroup=false` }
+
+          ],
+          [
+            { text: '报告总览', url: `t.me/${botName}?startgroup=false` },
+            { text: '黑车榜', url: `t.me/${botName}?startgroup=false` }
+          ],
+          [
+            { text: '汉化中文包', url: `t.me/${botName}?startgroup=false` }
           ]
+
         ]
       }
     })
@@ -62,14 +81,16 @@ bot.onText(/^\/start.*$/, ({ message_id, from, chat }) => {
   bot.deleteMessage(id, message_id)
 });
 
-bot.on('new_chat_members', ({ from, chat }) => {
-  const { id } = chat
-  bot.sendMessage(id, '欢迎新人进入！')
-})
+// bot.on('new_chat_members', ({ from, chat }) => {
+//   const { id } = chat
+//   bot.sendMessage(id, '欢迎新人进入！')
+// })
 
 
 
 bot.setMyCommands([{ command: '/start', description: '设置机器人' }])
+
+
 
 
 bot.on('webhook_error', (error) => {
