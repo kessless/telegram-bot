@@ -43,7 +43,7 @@ bot.onText(/^导航$/, ({ from, chat }) => {
   const { id: userId } = from
   const { type, id } = chat
   if (type === 'private') {
-    bot.sendMessage(id, '设置导航', {
+    bot.sendMessage(id, '导航', {
       reply_markup: {
         inline_keyboard: [
           [
