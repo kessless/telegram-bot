@@ -47,28 +47,28 @@ bot.onText(/^导航$/, ({ from, chat }) => {
       reply_markup: {
         inline_keyboard: [
           [
-            { text: '榜单报告', url: `t.me/${botName}?startgroup=false` },
-            { text: '车评上传', url: `t.me/${botName}?startgroup=false` }
+            { text: '榜单报告', url: `//t.me/YLQXBDBG` },
+            { text: '车评上传', url: `//t.me/YLQXZZ8/16` }
           ],
           [
-            { text: '私人定制', url: `t.me/${botName}?startgroup=false` },
-            { text: '电影频道', url: `t.me/${botName}?startgroup=false` }
+            { text: '私人定制', url: `//t.me/YLQXBDBG` },
+            { text: '电影频道', url: `//t.me/YLQXDY` }
           ],
           [
-            { text: '精准楼凤', url: `t.me/${botName}?startgroup=false` },
-            { text: '误封申诉群', url: `t.me/${botName}?startgroup=false` }
+            { text: '精准楼凤', url: `//t.me/YLQXBDBG` },
+            { text: '误封申诉群', url: `//t.me/YLQXSS` }
           ],
           [
-            { text: 'TG安装教程', url: `t.me/${botName}?startgroup=false` },
-            { text: '全国导航', url: `t.me/${botName}?startgroup=false` }
+            { text: 'TG安装教程', url: `https://t.me/YLQXZZ8/2` },
+            { text: '全国导航', url: `//t.me/YLQXZZ8/8` }
 
           ],
           [
-            { text: '报告总览', url: `t.me/${botName}?startgroup=false` },
-            { text: '黑车榜', url: `t.me/${botName}?startgroup=false` }
+            { text: '报告总览', url: `//t.me/+D7lPP-ce4khlMzRl` },
+            { text: '黑车榜', url: `//t.me/+BiKSExwG5-03Yjg1` }
           ],
           [
-            { text: '汉化中文包', url: `t.me/${botName}?startgroup=false` }
+            { text: '汉化中文包', url: `tg://setlanguage?lang=zhcncc` }
           ]
 
         ]
