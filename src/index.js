@@ -44,6 +44,7 @@ bot.onText(/^导航$/, ({ from, chat }) => {
   const { type, id } = chat
   if (type === 'private') {
     bot.sendMessage(id, '导航', {
+      text:"",
       reply_markup: {
         inline_keyboard: [
           [
@@ -80,15 +81,10 @@ bot.onText(/^\/start.*$/, ({ message_id, from, chat }) => {
   const { id } = chat
   bot.deleteMessage(id, message_id)
 });
-
-// bot.on('new_chat_members', ({ from, chat }) => {
-//   const { id } = chat
-//   bot.sendMessage(id, '欢迎新人进入！')
-// })
-
-
-
-bot.setMyCommands([{ command: '/start', description: '设置机器人' }])
+bot.onText(/^\/dhlm.*$/, ({ message_id, from, chat }) => {
+  const { id } = chat
+  bot.deleteMessage(id, message_id)
+});
 
 
 
