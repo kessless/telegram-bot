@@ -39,12 +39,10 @@ app.listen(port, () => {
 //   bot.sendMessage(id, `${buttons}`)
 // })
 
-bot.onText(/^导航$/, ({ from, chat }) => {
-  const { id: userId } = from
+bot.onText(/^导航$/, ({  from, chat }) => {
   const { type, id } = chat
   if (type === 'private') {
-    bot.sendMessage(id, '导航', {
-      text:"",
+    bot.sendMessage(id, '导航如下', {
       reply_markup: {
         inline_keyboard: [
           [
